@@ -52,7 +52,7 @@
                             <div class="hero-text">
                                 <div class="hero-text-tablecell">
                                     <p class="subtitle">Open Everyday</p>
-                                    <h1>1100% Organic Collection</h1>
+                                    <h1>100% Organic Collection</h1>
                                     <div class="hero-btns">
                                         <a href="{{ route('shop') }}" class="boxed-btn">Visit Shop</a>
                                         <a href="{{ route('contact') }}" class="bordered-btn">Contact Us</a>
