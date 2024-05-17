@@ -1,13 +1,3 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "public/**/*",
-        "use": "@now/static",
-        "config": {
-          "outputDirectory": "dist"
-        }
-      }
-    ]
-  }
-  
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
+}
