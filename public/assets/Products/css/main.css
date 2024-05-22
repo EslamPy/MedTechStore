@@ -128,7 +128,8 @@ iframe {
 /* ------------------------------------ */
 
 .container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    margin-top: -25px;
 }
 
 /*[ LOADDING ]
@@ -463,8 +464,8 @@ li.sale-noti>a {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 52px;
-    top: 50%;
+    left: 52px;
+    margin-top: 6px;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);

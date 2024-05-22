@@ -51,13 +51,13 @@
 <body>
 
 
-<!--PreLoader-->
+{{-- <!--PreLoader-->
 <div class="loader">
     <div class="loader-inner">
         <div class="circle"></div>
     </div>
 </div>
-<!--PreLoader Ends-->
+<!--PreLoader Ends--> --}}
 
 {{-- Navbar --}}
 <div class="top-header-area" id="sticker">
@@ -84,9 +84,6 @@
                     </ul>
                 </nav>
             </div>
-
-
-
 
             <!-- menu end -->
             <div class="col-lg-3 col-md-3">
@@ -117,9 +114,6 @@
 </div>
 
 
-
-
-
 <div class="section-title" style="margin-top: 30px;">
     <h3><span class="orange-text">Our</span> Partners</h3>
     <p>"Explore our collaborations with leading computer companies such as Alienware, Nvidia, Asus, Lian Li, and more. Discover top-quality components and products!"</p>
@@ -135,10 +129,10 @@
                         <img src="assets/img/company-logos/alienware.png" alt="">
                     </div>
                     <div class="single-logo-item">
-                        <img src="assets/img/company-logos/nvidia.png" alt="">
+                        <img src="assets/img/company-logos/Nvidia.png" alt="">
                     </div>
                     <div class="single-logo-item">
-                        <img src="assets/img/company-logos/asus.png" alt="">I
+                        <img src="assets/img/company-logos/asus.png" alt="">
                     </div>
                     <div class="single-logo-item">
                         <img src="assets/img/company-logos/lian li.png" alt="">
@@ -152,12 +146,15 @@
                     <div class="single-logo-item">
                         <img src="assets/img/company-logos/Sony.png" alt="">
                     </div>
+                    <div class="single-logo-item">
+                        <img src="assets/img/company-logos/Logitech.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- end logo carousel -->
+<!-- End Logo Carousel -->
 
 <!-- footer -->
 <footer id="dk-footer" class="dk-footer">
@@ -254,16 +251,15 @@
                                     <li>
                                         <a href="{{ route('shop') }}">Shop</a>
                                     </li>
-                                    <li>
-                                        <a href="{{ route('news') }}">News</a>
-                                    </li>
                                 </ul>
                                 <ul>
                                     <li>
                                         <a href="{{ route('contact') }}">Contact us</a>
+                                        
                                     </li>
+
                                     <li>
-                                        <a href="#">Faq</a>
+                                        <a href="{{ route('news') }}">News</a>
                                     </li>
                                 </ul>
                             </div>
@@ -333,8 +329,9 @@
                 <!-- End Row -->
             </div>
             <!-- End Copyright Container -->
-        </div>
+        </div> 
         <!-- End Copyright -->
+        
         <!-- Back to top -->
         <div id="back-to-top" class="back-to-top">
             <button class="btn btn-dark" title="Back to Top" style="display: block;">

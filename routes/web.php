@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ShopController;
@@ -15,73 +14,45 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DashboardProduct;
 use App\Http\Controllers\Admin\EditProductController;
 use App\Http\Controllers\Admin\AddProductController;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 
-Route::get('/Products', [ProductsController::class, 'index'])->name('Products');
+Route::get('/products', [ProductsController::class, 'index'])->name('Products');
 
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-
-Route::get('/cart', [CartController::class, 'index'])->name('cart');
-
-Route::get('/check', [CheckoutController::class, 'index'])->name('checkout');
-
-
-
-Route::get('/latest', [LatestNewsController::class, 'index'])->name('latest');
-
-// <!-- Cart Route -->
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
+Route::get('/latest', [LatestNewsController::class, 'index'])->name('latest');
 
-
-// <!-- Admin Dashboard -->
 Route::get('/dash', [DashboardController::class, 'index'])->name('dash');
-
-// <!-- Product Dashboard -->
 Route::get('/product', [DashboardProduct::class, 'index'])->name('product');
 
-// <!-- Edit a Product in the Website -->
 Route::get('/edit', [EditProductController::class, 'index'])->name('edit');
-
-// <!-- Add a Product Page -->
 Route::get('/add', [AddProductController::class, 'index'])->name('add');
 
-
+// Authentication Routes
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Custom Logout Route
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Auth::routes();
+// Password Reset Routes
+Route::get('/password/reset', [ResetPasswordController::class, 'showResetForm'])->name('password.request');
+Route::post('/password/email', [ResetPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+// Registration Routes
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
