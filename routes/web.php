@@ -56,3 +56,4 @@ Route::post('/password/reset', [ResetPasswordController::class, 'reset'])->name(
 // Registration Routes
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

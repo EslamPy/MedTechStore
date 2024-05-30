@@ -2,6 +2,16 @@
 
 @section('static')
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- title -->
+    <title>News</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+
+</head>
 <body>
     <!-- search area -->
     <div class="search-area">
